@@ -241,13 +241,13 @@ ramp-volume-3 = 
 
 
 ; Arch Updates Module
-[module/arch_updates]
-type = custom/script
-interval = 3600
-format = <label>
-label = "%output:0:15%"
-exec = "~/.config/scripts/arch_updates.sh &"
-exec-if = "ping -q -w 2 -c 1 8.8.8.8 > /dev/null"
+#[module/arch_updates]
+#type = custom/script
+#interval = 3600
+#format = <label>
+#label = "%output:0:15%"
+#exec = "~/.config/scripts/arch_updates.sh &"
+#exec-if = "ping -q -w 2 -c 1 8.8.8.8 > /dev/null"
 
 
 ; Date Module
