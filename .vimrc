@@ -168,12 +168,19 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " Section VimPlug Config {{{
 
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 
+Plugin 'airblade/vim-gitgutter'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-github-dashboard'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'   
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -188,6 +195,10 @@ Plug 'nightsense/seabird'
 Plug 'nightsense/night-and-day'
 Plug 'xolox/vim-colorscheme-switcher'
 Plug 'xolox/vim-misc'
+Plug 'tomasiser/vim-code-dark'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
